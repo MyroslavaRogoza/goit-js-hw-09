@@ -53,10 +53,9 @@ input.addEventListener('blur', ()=>{
 },);
 
 function restoreUserData(){
-    const userData =  loadFromLS(LSKey);
+    const userData =  loadFromLS(LSKey) || {};
 
     input.value = userData.email ?? '';
     textarea.value = userData.message ?? '';
 }
 restoreUserData();
-
